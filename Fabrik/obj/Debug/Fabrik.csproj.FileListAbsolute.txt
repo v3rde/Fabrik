@@ -35,3 +35,17 @@ D:\_rep\GitHub\Fabrik\Fabrik\obj\Debug\Fabrik.csproj.GenerateResource.Cache
 C:\work\src\fabrikWpf\Fabrik\bin\Debug\Fabrik.exe.config
 C:\work\src\fabrikWpf\Fabrik\obj\Debug\Fabrik.exe
 C:\work\src\fabrikWpf\Fabrik\obj\Debug\Fabrik.pdb
+D:\_rep\GitHub\Fabrik\Fabrik\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\_rep\GitHub\Fabrik\Fabrik\obj\Debug\Fabrik_MarkupCompile.lref
+D:\_rep\GitHub\Fabrik\Fabrik\bin\Debug\GalaSoft.MvvmLight.Extras.WPF45.dll
+D:\_rep\GitHub\Fabrik\Fabrik\bin\Debug\GalaSoft.MvvmLight.WPF45.dll
+D:\_rep\GitHub\Fabrik\Fabrik\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\_rep\GitHub\Fabrik\Fabrik\bin\Debug\System.Windows.Interactivity.dll
+D:\_rep\GitHub\Fabrik\Fabrik\bin\Debug\GalaSoft.MvvmLight.Extras.WPF45.pdb
+D:\_rep\GitHub\Fabrik\Fabrik\bin\Debug\GalaSoft.MvvmLight.Extras.WPF45.xml
+D:\_rep\GitHub\Fabrik\Fabrik\bin\Debug\GalaSoft.MvvmLight.WPF45.pdb
+D:\_rep\GitHub\Fabrik\Fabrik\bin\Debug\GalaSoft.MvvmLight.WPF45.xml
+D:\_rep\GitHub\Fabrik\Fabrik\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+D:\_rep\GitHub\Fabrik\Fabrik\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+D:\_rep\GitHub\Fabrik\Fabrik\bin\Debug\System.Windows.Interactivity.xml
+D:\_rep\GitHub\Fabrik\Fabrik\obj\Debug\App.baml

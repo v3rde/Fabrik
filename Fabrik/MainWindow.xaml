@@ -71,9 +71,27 @@
                     <TextBlock Grid.Row="4" Grid.Column="0">Количество</TextBlock>
                     <TextBlock Grid.Row="5" Grid.Column="0">Дата</TextBlock>
                     
-                    <ComboBox ItemsSource="{Binding Path=Areas}" SelectedItem="{Binding Path=NewProductionArea}" Grid.Row="1" Grid.Column="1"/>
-                    <ComboBox ItemsSource="{Binding Path=Workers}" SelectedItem="{Binding Path=NewProductionWorker}"  Grid.Row="2" Grid.Column="1"/>
-                    <ComboBox ItemsSource="{Binding Path=Products}" SelectedItem="{Binding Path=NewProductionProduct}"  Grid.Row="3" Grid.Column="1"/>
+                    <ComboBox ItemsSource="{Binding Path=Areas}" SelectedItem="{Binding Path=NewProductionArea}" Grid.Row="1" Grid.Column="1">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Name}"></TextBlock>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <ComboBox ItemsSource="{Binding Path=Workers}" SelectedItem="{Binding Path=NewProductionWorker}"  Grid.Row="2" Grid.Column="1">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Name}"></TextBlock>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <ComboBox ItemsSource="{Binding Path=Products}" SelectedItem="{Binding Path=NewProductionProduct}"  Grid.Row="3" Grid.Column="1">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Name}"></TextBlock>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
                     <TextBox Text="{Binding Path=NewProductionQuantity}" x:Name="NewProductionQuantity" Grid.Row="4" Grid.Column="1"></TextBox>
                     <DatePicker SelectedDate="{Binding Path=NewProdictionDateTime}" x:Name="NewProductionDate" Grid.Column="1"  Grid.Row="5" />
                     
@@ -221,8 +239,14 @@
                     </ListView>
                     <TextBlock Grid.Row="1" Grid.Column="0">Название</TextBlock>
                     <TextBlock Grid.Row="2" Grid.Column="0">Цех</TextBlock>
-                    <TextBox x:Name="NewAreaName" Grid.Row="1" Grid.Column="1"></TextBox>
-                    <ComboBox ItemsSource="{Binding Path=Workshops}" SelectedItem="{Binding Path=NewAreaWorkshop}" Grid.Row="1" Grid.Column="1"/>
+                    <TextBox Text="{Binding Path=NewAreaName}" x:Name="NewAreaName" Grid.Row="1" Grid.Column="1"></TextBox>
+                    <ComboBox ItemsSource="{Binding Path=Workshops}" SelectedItem="{Binding Path=NewAreaWorkshop}" Grid.Row="2" Grid.Column="1">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Name}"></TextBlock>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
                     <Button x:Name="AddArea" Grid.Row="3" Grid.Column="1" Command="{Binding Path=AddAreaCommand}">Add</Button>
 
                 </Grid>
@@ -238,7 +262,7 @@
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <ListView ItemsSource="{Binding Path=Workshop}"  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
+                    <ListView ItemsSource="{Binding Path=Workshops}"  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
                         <ListView.ItemContainerStyle>
                             <Style TargetType="{x:Type ListViewItem}">
                                 <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>

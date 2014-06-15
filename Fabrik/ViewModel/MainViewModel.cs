@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Fabrik.Models;
@@ -12,13 +13,18 @@ namespace Fabrik.ViewModel
         public MainViewModel()
         {
             DbContext = new FabrikDb();
-            //var o = DbContext.Workers.ToList();
+            var o = DbContext.Productions
+                .Include("Worker")
+                .Include("Product")
+                .Include("Area.Workshop")
+                .ToList();
         }
         FabrikDb DbContext { get; set; }
 
         public ObservableCollection<Worker> Workers { get { return DbContext.Workers.Local; } }
         public ObservableCollection<Product> Products { get { return DbContext.Products.Local; } }
         public ObservableCollection<Area> Areas { get { return DbContext.Areas.Local; } }
+        public ObservableCollection<Workshop> Workshops { get { return DbContext.Workshops.Local; } }
 
         private Area _area;
 
