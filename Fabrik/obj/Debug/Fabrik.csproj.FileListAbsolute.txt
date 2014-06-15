@@ -18,3 +18,17 @@ D:\dev\Fabrik\Fabrik\obj\Debug\Fabrik.pdb
 D:\_rep\GitHub\Fabrik\Fabrik\bin\Debug\Fabrik.exe.config
 D:\_rep\GitHub\Fabrik\Fabrik\obj\Debug\Fabrik.exe
 D:\_rep\GitHub\Fabrik\Fabrik\obj\Debug\Fabrik.pdb
+D:\_rep\GitHub\Fabrik\Fabrik\bin\Debug\Fabrik.exe
+D:\_rep\GitHub\Fabrik\Fabrik\bin\Debug\Fabrik.pdb
+D:\_rep\GitHub\Fabrik\Fabrik\bin\Debug\EntityFramework.dll
+D:\_rep\GitHub\Fabrik\Fabrik\bin\Debug\EntityFramework.SqlServer.dll
+D:\_rep\GitHub\Fabrik\Fabrik\bin\Debug\EntityFramework.xml
+D:\_rep\GitHub\Fabrik\Fabrik\bin\Debug\EntityFramework.SqlServer.xml
+D:\_rep\GitHub\Fabrik\Fabrik\obj\Debug\Fabrik.csprojResolveAssemblyReference.cache
+D:\_rep\GitHub\Fabrik\Fabrik\obj\Debug\MainWindow.baml
+D:\_rep\GitHub\Fabrik\Fabrik\obj\Debug\MainWindow.g.cs
+D:\_rep\GitHub\Fabrik\Fabrik\obj\Debug\App.g.cs
+D:\_rep\GitHub\Fabrik\Fabrik\obj\Debug\Fabrik_MarkupCompile.cache
+D:\_rep\GitHub\Fabrik\Fabrik\obj\Debug\Fabrik.g.resources
+D:\_rep\GitHub\Fabrik\Fabrik\obj\Debug\Fabrik.Properties.Resources.resources
+D:\_rep\GitHub\Fabrik\Fabrik\obj\Debug\Fabrik.csproj.GenerateResource.Cache

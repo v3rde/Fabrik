@@ -25,6 +25,7 @@ namespace Fabrik
         {
             InitializeComponent();
             ViewModel = new MainViewModel();
+            DataContext = ViewModel;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
