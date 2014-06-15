@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Collections.ObjectModel;
+using System.Windows.Documents;
 using System.Windows.Input;
 using Fabrik.Models;
 using GalaSoft.MvvmLight;
@@ -13,11 +15,18 @@ namespace Fabrik.ViewModel
         public MainViewModel()
         {
             DbContext = new FabrikDb();
-            var o = DbContext.Productions
+            var productions = DbContext.Productions
                 .Include("Worker")
                 .Include("Product")
                 .Include("Area.Workshop")
                 .ToList();
+            var workers = DbContext.Workers.ToList();
+            var products = DbContext.Products.ToList();
+            var areas = DbContext.Areas.ToList();
+            var workshops = DbContext.Workshops.ToList();
+
+            ReportStartDate = DateTime.Today.AddYears(-1);
+            NewProdictionDateTime = ReportEndDate = DateTime.Today;
         }
         FabrikDb DbContext { get; set; }
 
@@ -25,6 +34,64 @@ namespace Fabrik.ViewModel
         public ObservableCollection<Product> Products { get { return DbContext.Products.Local; } }
         public ObservableCollection<Area> Areas { get { return DbContext.Areas.Local; } }
         public ObservableCollection<Workshop> Workshops { get { return DbContext.Workshops.Local; } }
+
+        private List<Worker> _report;
+
+        public List<Worker> Report
+        {
+            get { return _report; }
+            set
+            {
+                _report = value;
+                RaisePropertyChanged(() => Report);
+            }
+        }
+
+        private void UpdateReport()
+        {
+            Report = DbContext.Productions.Local.Where(
+                pro => pro.DateTime <= ReportEndDate && pro.DateTime >= ReportStartDate && pro.Product == ReportProduct)
+                .Select(pro => pro.Worker)
+                .Distinct().ToList();
+        }
+        private Product _reportProduct;
+
+        public Product ReportProduct
+        {
+            get { return _reportProduct; }
+            set
+            {
+                _reportProduct = value;
+                RaisePropertyChanged(() => ReportProduct);
+                UpdateReport();
+            }
+        }
+
+        private DateTime _reportStartDate;
+
+        public DateTime ReportStartDate
+        {
+            get { return _reportStartDate; }
+            set
+            {
+                _reportStartDate = value;
+                RaisePropertyChanged(() => ReportStartDate);
+                UpdateReport();
+            }
+        }
+
+        private DateTime _reportEndDate;
+
+        public DateTime ReportEndDate
+        {
+            get { return _reportEndDate; }
+            set
+            {
+                _reportEndDate = value;
+                RaisePropertyChanged(() => ReportEndDate);
+                UpdateReport();
+            }
+        }
 
         private Area _area;
 
@@ -167,6 +234,7 @@ namespace Fabrik.ViewModel
                 RaisePropertyChanged(() => NewAreaWorkshop);
             }
         }
+
 
         private RelayCommand _addProductCommand;
         public ICommand AddProductCommand

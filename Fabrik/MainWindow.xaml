@@ -4,6 +4,60 @@
         Title="MainWindow" Height="600" Width="800">
     <Grid>
         <TabControl>
+            <TabItem Header="Отчет">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <ListView ItemsSource="{Binding Path=Report}" Grid.Row="1" >
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListViewItem}">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Сотрудник" Width="150">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Path=Worker.Name}"></TextBlock>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0">Изделие</TextBlock>
+                        <ComboBox ItemsSource="{Binding Path=Products}" SelectedItem="{Binding Path=ReportProduct}"  Grid.Column="1">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Name}"></TextBlock>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+
+                        <TextBlock Grid.Column="2">От</TextBlock>
+                        <DatePicker SelectedDate="{Binding Path=ReportStartDate}" x:Name="ReportStartDate" Grid.Column="3"  />
+
+                        <TextBlock Grid.Column="4">До</TextBlock>
+                        <DatePicker SelectedDate="{Binding Path=ReportEndDate}" x:Name="ReportEndDate" Grid.Column="5"  />
+
+                    </Grid>
+                </Grid>
+            </TabItem>
             <TabItem Header="Производство">
                 <Grid Background="#FFE5E5E5">
                     <Grid.RowDefinitions>
@@ -70,7 +124,7 @@
                     <TextBlock Grid.Row="3" Grid.Column="0">Продукция</TextBlock>
                     <TextBlock Grid.Row="4" Grid.Column="0">Количество</TextBlock>
                     <TextBlock Grid.Row="5" Grid.Column="0">Дата</TextBlock>
-                    
+
                     <ComboBox ItemsSource="{Binding Path=Areas}" SelectedItem="{Binding Path=NewProductionArea}" Grid.Row="1" Grid.Column="1">
                         <ComboBox.ItemTemplate>
                             <DataTemplate>
@@ -94,7 +148,7 @@
                     </ComboBox>
                     <TextBox Text="{Binding Path=NewProductionQuantity}" x:Name="NewProductionQuantity" Grid.Row="4" Grid.Column="1"></TextBox>
                     <DatePicker SelectedDate="{Binding Path=NewProdictionDateTime}" x:Name="NewProductionDate" Grid.Column="1"  Grid.Row="5" />
-                    
+
                     <Button x:Name="AddProduction" Grid.Row="6" Grid.Column="1" Command="{Binding Path=AddProductionCommand}"  >Add</Button>
 
                 </Grid>
@@ -277,7 +331,7 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                             
+
 
                             </GridView>
                         </ListView.View>
