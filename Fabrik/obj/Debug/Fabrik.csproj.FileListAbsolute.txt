@@ -32,3 +32,6 @@ D:\_rep\GitHub\Fabrik\Fabrik\obj\Debug\Fabrik_MarkupCompile.cache
 D:\_rep\GitHub\Fabrik\Fabrik\obj\Debug\Fabrik.g.resources
 D:\_rep\GitHub\Fabrik\Fabrik\obj\Debug\Fabrik.Properties.Resources.resources
 D:\_rep\GitHub\Fabrik\Fabrik\obj\Debug\Fabrik.csproj.GenerateResource.Cache
+C:\work\src\fabrikWpf\Fabrik\bin\Debug\Fabrik.exe.config
+C:\work\src\fabrikWpf\Fabrik\obj\Debug\Fabrik.exe
+C:\work\src\fabrikWpf\Fabrik\obj\Debug\Fabrik.pdb

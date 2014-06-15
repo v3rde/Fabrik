@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\_rep\GitHub\Fabrik\Fabrik\obj\Debug\
+C:\work\src\fabrikWpf\Fabrik\obj\Debug\
 Fabrik
 none
 false
 DEBUG;TRACE
-D:\_rep\GitHub\Fabrik\Fabrik\App.xaml
+C:\work\src\fabrikWpf\Fabrik\App.xaml
 11151548125
 
-161411125102
-15-1316557609
+171135740278
+19-1297455816
 MainWindow.xaml;
 
 False
